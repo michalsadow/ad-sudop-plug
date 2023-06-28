@@ -1,0 +1,35 @@
+<phpunit
+  bootstrap="bootstrap.php"
+  convertDeprecationsToExceptions="true"
+  convertErrorsToExceptions="true"
+  convertNoticesToExceptions="true"
+  convertWarningsToExceptions="true"
+  colors="true"
+  stderr="true"
+  stopOnError="true"
+  stopOnFailure="true"
+  stopOnIncomplete="true"
+  stopOnSkipped="true"
+  stopOnRisky="true"
+  verbose="true">
+  <testsuites>
+    <testsuite name="Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory>src/</directory>
+      <exclude>
+        <directory>.cc/</directory>
+        <directory>resources/</directory>
+        <directory>tests/</directory>
+      </exclude>
+    </whitelist>
+  </filter>
+  <logging>
+    <log type="coverage-html" target=".cc"/>
+    <log type="coverage-text" target=".cc/coverage.txt"/>
+    <log type="testdox-text" target=".cc/testdox.txt"/>
+  </logging>
+</phpunit>
